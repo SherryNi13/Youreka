@@ -1,4 +1,3 @@
-pip install streamlit pandas seaborn numpy plotly matplotlib scipy scikit-learn
 import streamlit as st
 from streamlit.logger import get_logger
 
