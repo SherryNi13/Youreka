@@ -40,10 +40,10 @@ def run():
     st.write("Columns in the dataset:", df.columns)
 
     # Filter the dataset to include only rows where the disease is 'Anthrax'
-    if 'disease' in df.columns:
-        df_anthrax = df[df['disease'] == 'Anthrax']
+    if 'Disease' in df.columns:
+        df_anthrax = df[df['Disease'] == 'Anthrax']
     else:
-        st.error("The column 'disease' does not exist in the dataset.")
+        st.error("The column 'Disease' does not exist in the dataset.")
         return
 
     # Display the filtered dataset
@@ -55,11 +55,11 @@ def run():
     st.write('### Regression Graph')
 
     # Define X (features) and y (target)
-    X = df_anthrax[['county']]
-    y = df_anthrax['cases']
+    X = df_anthrax[['County']]
+    y = df_anthrax['Cases']
 
     # Encode the 'county' column
-    X['county_encode'] = LabelEncoder().fit_transform(X['county'])
+    X['county_encode'] = LabelEncoder().fit_transform(X['County'])
 
     # Instantiate a linear regression model
     linear_model = LinearRegression()
